@@ -1,0 +1,214 @@
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+body{line-height:1; font-family: arial;}
+h1{font-size: 25px;}h2{font-size: 21px;}h3{font-size: 18px;}h4{font-size: 16px;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+nav ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}
+ins{background-color:#ff9;color:#000;text-decoration:none}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+input,select{vertical-align:middle}
+
+body,html {
+    background-color: #FFF;
+    margin-bottom: 50px;
+}
+header {
+    background: #333333;
+    width: 100%;
+    margin: auto;
+}
+#about {
+    float: right;
+    vertical-align: middle;
+    background: #EEE;
+    padding: 10px 10px;
+    font-size: 20px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    color: #444;
+    border-radius: 10px;
+}
+#about:hover {
+    background: lightgrey;
+}
+#titleLong {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 30px;
+    margin-right: 30px;
+    color: #FFF;
+}
+#titleLong a {
+    text-decoration: none;
+    color: white;
+}
+#titleShort {
+    display: none;
+    vertical-align: middle;
+    font-size: 30px;
+    margin-right: 30px;
+    margin-left: 20px;
+    color: #FFF;
+}
+#titleShort a {
+    text-decoration: none;
+    color: white;
+}
+#headerContent {
+    max-width: 1000px;
+    padding: 20px 0px;
+    margin: auto;
+    border: none;
+}
+#pageContent {
+    max-width: 1000px;
+    margin: auto;
+    border: none;
+}
+#introText {
+    line-height: 1.6;
+  }
+#userInput {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    max-width: 1000px;
+}
+#userInput h3 {
+    margin-right: 15px;
+    width: 325px;
+    vertical-align: middle;
+}
+#userInput button {
+    margin-left: 15px;
+    width: 75px;
+    height: 30px;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 4px;
+    text-align: center;
+    vertical-align: middle;
+}
+#userInput button:hover {
+    background-color: lightgray;
+}
+
+main {
+	float: left;
+	width: 100%;
+}
+aside {
+	float: right;
+	width: 30%;
+}
+article {
+    border-bottom: 2px dotted #999;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+article h2 {
+    font-weight: normal;
+    margin-bottom: 12px;
+}
+footer {
+    display: inline-block;
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    width:100%;
+	background: #333333;
+    margin: auto;
+    padding: 10px;
+	clear: both;
+    text-align: center;
+    color: white;
+}
+footer a {
+    color: white;
+}
+footer p {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 10px;
+}
+address {
+    padding: 10px 20px 30px 10px;
+}
+aside > div {
+	margin: 10px auto;
+	background: #333333;
+	min-height: 100px;
+}
+#logo img {
+    width: 50px;
+    vertical-align: middle;
+}
+body > section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px 0px;
+    border-bottom: 1px solid #999;
+    color: black;
+    line-height: normal;
+}
+body > section > h2 {
+    padding-bottom: 20px;
+}
+body > section > p > a {
+    font-weight: bold;
+    color: black;
+}
+body > section > pre {
+    margin: 20px 0px;
+    padding: 16px;
+    overflow: auto;
+    font-size: 12pt;
+    line-height: 1.45;
+    background-color: lightgray;
+    border-radius: 6px;
+}
+
+#outputContainer {
+    display: none;
+}
+
+
+#coverImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#exampleArt {
+    width: 100%;
+}
+
+
+@media screen and (max-width: 1000px) {
+	body > section {
+		padding: 30px 20px;
+    }
+    #titleLong {
+        margin-left: 20px;
+    }
+}
+@media screen and (max-width: 600px) {
+    #titleShort {
+        display: inline-block;
+    }
+    #titleLong {
+        display: none;
+    }
+}
+@media screen and (max-width: 400px) {
+    #titleShort {
+        font-size: 25px;
+    }
+}
