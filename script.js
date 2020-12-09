@@ -112,10 +112,14 @@ function generateBandnames(rawDictContents){
 }
 
 function getRandomInt(max) {
-    return Math.floor(Math.random() * Math.floor(max));
+    var rand = Math.floor(Math.random() * Math.floor(max));
+    if(rand == 0){
+        return rand + 1;
+    }
+    return rand;
 }
 
 function randBool(){
-    var randInt = getRandomInt(2);
+    var randInt = Math.floor(Math.random() * Math.floor(2));
     return randInt == 1;
 }
