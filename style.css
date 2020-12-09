@@ -198,6 +198,9 @@ body > section > pre {
     #titleLong {
         margin-left: 20px;
     }
+    #about {
+        margin-right: 10px;
+    }
 }
 @media screen and (max-width: 600px) {
     #titleShort {
