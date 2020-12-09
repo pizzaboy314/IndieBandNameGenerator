@@ -33,7 +33,7 @@ function generate(flag) {
             rawDictContents.set(key,text);
             filesLoaded++;
             if(filesLoaded == rawDictFilepaths.length){
-                generateBandnames(rawDictContents,flag);
+                return generateBandnames(rawDictContents,flag);
             }
         });
     }
@@ -121,6 +121,7 @@ function generateBandnames(rawDictContents,flag){
         var sectionTag = document.getElementById('outputContainer');
         sectionTag.style.display = 'block';
     }
+    return output;
 }
 
 function getRandomInt(max) {
