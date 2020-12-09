@@ -1,6 +1,8 @@
-function generate() {
-    var sectionTag = document.getElementById('outputContainer');
-    sectionTag.style.display = 'none';
+function generate(flag) {
+    if(flag != 1){
+        var sectionTag = document.getElementById('outputContainer');
+        sectionTag.style.display = 'none';
+    }
 
     var rawDictContents = new Map();
     var rawDictFilepaths = [6];
@@ -31,14 +33,19 @@ function generate() {
             rawDictContents.set(key,text);
             filesLoaded++;
             if(filesLoaded == rawDictFilepaths.length){
-                generateBandnames(rawDictContents);
+                generateBandnames(rawDictContents,flag);
             }
         });
     }
 
 }
-function generateBandnames(rawDictContents){
-    var numberOfNames = document.getElementById('numberOfNames').value;
+function generateBandnames(rawDictContents,flag){
+    var numberOfNames = 0;
+    if(flag == 1){
+        numberOfNames = 1;
+    } else {
+        numberOfNames = document.getElementById('numberOfNames').value
+    }
     var arrAdj = rawDictContents.get('adj').split('\n');
     var arrFName = rawDictContents.get('fname').split('\n');
     var arrMName = rawDictContents.get('mname').split('\n');
@@ -105,10 +112,15 @@ function generateBandnames(rawDictContents){
         output = output + bandname;
     }
 
-    var codeTag = document.getElementById('textOutput');
-    codeTag.innerHTML = output;
-    var sectionTag = document.getElementById('outputContainer');
-    sectionTag.style.display = 'block';
+    if(flag == 1){
+        var apiTag = document.getElementById('api');
+        apiTag.innerHTML = output;
+    } else {
+        var codeTag = document.getElementById('textOutput');
+        codeTag.innerHTML = output;
+        var sectionTag = document.getElementById('outputContainer');
+        sectionTag.style.display = 'block';
+    }
 }
 
 function getRandomInt(max) {
