@@ -1,5 +1,5 @@
 function generate(flag) {
-    if(flag != 1){
+    if(flag == 0){
         var sectionTag = document.getElementById('outputContainer');
         sectionTag.style.display = 'none';
     }
@@ -41,8 +41,8 @@ function generate(flag) {
 }
 function generateBandnames(rawDictContents,flag){
     var numberOfNames = 0;
-    if(flag == 1){
-        numberOfNames = 1;
+    if(flag > 0){
+        numberOfNames = flag;
     } else {
         numberOfNames = document.getElementById('numberOfNames').value
     }
@@ -112,7 +112,7 @@ function generateBandnames(rawDictContents,flag){
         output = output + bandname;
     }
 
-    if(flag == 1){
+    if(flag > 0){
         var apiTag = document.getElementById('api');
         apiTag.innerHTML = output;
     } else {
