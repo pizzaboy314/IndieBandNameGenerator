@@ -72,14 +72,14 @@ function generateBandnames(rawDictContents,flag){
         output = (i > 0) ? output + '\n' : output;
 
         var currGrammar = grammars[getRandomInt(grammars.length)];
-        var adj1 = arrAdj[getRandomInt(arrAdj.length)];
-        var adj2 = arrAdj[getRandomInt(arrAdj.length)];
-        var noun1 = arrNoun[getRandomInt(arrNoun.length)];
-        var noun2 = arrNoun[getRandomInt(arrNoun.length)];
-        var verb = arrVerb[getRandomInt(arrVerb.length)];
-        var fname = arrFName[getRandomInt(arrFName.length)];
-        var mname = arrMName[getRandomInt(arrMName.length)];
-        var sname = arrSName[getRandomInt(arrSName.length)];
+        var adj1 = arrAdj[getRandomInt(arrAdj.length)].trim();
+        var adj2 = arrAdj[getRandomInt(arrAdj.length)].trim();
+        var noun1 = arrNoun[getRandomInt(arrNoun.length)].trim();
+        var noun2 = arrNoun[getRandomInt(arrNoun.length)].trim();
+        var verb = arrVerb[getRandomInt(arrVerb.length)].trim();
+        var fname = arrFName[getRandomInt(arrFName.length)].trim();
+        var mname = arrMName[getRandomInt(arrMName.length)].trim();
+        var sname = arrSName[getRandomInt(arrSName.length)].trim();
 
         var bandname = '';
         if(currGrammar === 'AdjNoun' || currGrammar === 'Adj Noun' ){
@@ -109,6 +109,7 @@ function generateBandnames(rawDictContents,flag){
         } else if(currGrammar === 'The Noun Boys'){
             bandname += 'The ' + noun1 + ' Boys';
         }
+        bandname = bandname.replace(/[\n\r]/g, ' ').trim();
         output = output + bandname;
     }
 
