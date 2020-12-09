@@ -81,10 +81,11 @@ header {
     margin: auto;
     max-width: 1000px;
 }
-#userInput h3 {
+#userInputLabel {
     margin-right: 15px;
-    width: 325px;
     vertical-align: middle;
+    font-size: 18px;
+    font-weight: bold;
 }
 #userInput button {
     margin-left: 15px;
@@ -97,6 +98,19 @@ header {
     vertical-align: middle;
 }
 #userInput button:hover {
+    background-color: lightgray;
+}
+#numberOfNames {
+    margin: 0px 5px 0px;
+    width: 40px;
+    height: 30px;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 4px;
+    text-align: center;
+    vertical-align: middle;
+}
+#numberOfNames:focus {
     background-color: lightgray;
 }
 
@@ -213,5 +227,9 @@ body > section > pre {
 @media screen and (max-width: 400px) {
     #titleShort {
         font-size: 25px;
+    }
+    #userInputLabel {
+        font-size: 16px;
+        font-weight: bold;
     }
 }

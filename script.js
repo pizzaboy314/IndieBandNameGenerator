@@ -1,4 +1,4 @@
-function generate(numberOfNames) {
+function generate() {
     var sectionTag = document.getElementById('outputContainer');
     sectionTag.style.display = 'none';
 
@@ -31,13 +31,14 @@ function generate(numberOfNames) {
             rawDictContents.set(key,text);
             filesLoaded++;
             if(filesLoaded == rawDictFilepaths.length){
-                generateBandnames(rawDictContents,numberOfNames);
+                generateBandnames(rawDictContents);
             }
         });
     }
 
 }
-function generateBandnames(rawDictContents,numberOfNames){
+function generateBandnames(rawDictContents){
+    var numberOfNames = document.getElementById('numberOfNames').value;
     var arrAdj = rawDictContents.get('adj').split('\n');
     var arrFName = rawDictContents.get('fname').split('\n');
     var arrMName = rawDictContents.get('mname').split('\n');
