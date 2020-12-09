@@ -12,6 +12,7 @@ function generate(flag) {
     rawDictFilepaths[3] = '/IndieBandNameGenerator/words/lastnames.txt';
     rawDictFilepaths[4] = '/IndieBandNameGenerator/words/nouns.txt';
     rawDictFilepaths[5] = '/IndieBandNameGenerator/words/verbs.txt';
+    rawDictFilepaths[6] = '/IndieBandNameGenerator/words/interjections.txt';
 
     var filesLoaded = 0;
     for(var i=0; i<rawDictFilepaths.length; i++){
@@ -29,6 +30,8 @@ function generate(flag) {
                 key = 'noun';
             } else if(text.startsWith('**verbs')){
                 key = 'verb';
+            } else if(text.startsWith('**interjections')){
+                key = 'intj';
             }
             rawDictContents.set(key,text);
             filesLoaded++;
@@ -52,6 +55,7 @@ function generateBandnames(rawDictContents,flag){
     var arrSName = rawDictContents.get('sname').split('\n');
     var arrNoun = rawDictContents.get('noun').split('\n');
     var arrVerb = rawDictContents.get('verb').split('\n');
+    var arrIntj = rawDictContents.get('intj').split('\n');
 
     var grammars = [];
     grammars.push('AdjNoun');
@@ -66,6 +70,8 @@ function generateBandnames(rawDictContents,flag){
     grammars.push('Noun');
     grammars.push('Verb the Noun');
     grammars.push('The Noun Boys');
+    grammars.push('Interjection! You Adj Noun');
+    grammars.push('The Adj, Adj Nouns');
 
     var output = '';
     for(var i=0; i<numberOfNames; i++){
@@ -77,6 +83,7 @@ function generateBandnames(rawDictContents,flag){
         var noun1 = arrNoun[getRandomInt(arrNoun.length)].trim();
         var noun2 = arrNoun[getRandomInt(arrNoun.length)].trim();
         var verb = arrVerb[getRandomInt(arrVerb.length)].trim();
+        var intj = arrIntj[getRandomInt(arrIntj.length)].trim();
         var fname = arrFName[getRandomInt(arrFName.length)].trim();
         var mname = arrMName[getRandomInt(arrMName.length)].trim();
         var sname = arrSName[getRandomInt(arrSName.length)].trim();
@@ -108,6 +115,10 @@ function generateBandnames(rawDictContents,flag){
             bandname += verb + ' the ' + noun1 + (randBool() ? 's' : '');
         } else if(currGrammar === 'The Noun Boys'){
             bandname += 'The ' + noun1 + ' Boys';
+        } else if(currGrammar === 'Interjection! You Adj Noun'){
+            bandname += intj + '! You ' + adj1 + ' ' + noun1;
+        } else if(currGrammar === 'The Adj, Adj Nouns'){
+            bandname += 'The ' + adj1 + ', ' + adj1 + ' ' + (randBool() ? noun1 + ' ' : '') + noun2 + 's';
         }
         bandname = bandname.replace(/[\n\r]/g, ' ').trim();
         output = output + bandname;
