@@ -94,7 +94,7 @@ function generateBandnames(rawDictContents,flag){
         } else if(currGrammar === 'The Adj Nouns'){
             bandname += 'The ' + adj1 + ' ' + noun1 + 's';
         } else if(currGrammar === 'Noun Noun'){
-            bandname += noun1 + ' ' + noun2;
+            bandname += noun1 + (randBool() ? ' for' : '') + ' ' + noun2;
         } else if(currGrammar === 'First Last & the Adj Nouns'){
             bandname += (randBool() ? fname : mname) + '' + (randBool() ? ' ' + sname : '');
             bandname += ' & the ';
